@@ -17,10 +17,21 @@
   <dd>{{capitalizedName}}</dd>
 </dl>
 
-<button class="btn btn-primary mx-2" (click)="changeHero()" >
+<!-- al usar directivas propias de angular no see encesita la doble llave
+basta utilizar una expresion de javascript -->
+<button class="btn btn-primary mx-2"
+  *ngIf="name !== 'Batman'"
+  (click)="changeHero()" >
   Cambiar nombre
 </button>
 
-<button class="btn btn-primary mx-2" (click)="changeAge()">
+<button class="btn btn-primary mx-2"
+  *ngIf="age !== 40"
+  (click)="changeAge()">
   Cambiar edad
+</button>
+
+<button class="btn btn-primary mx-2"
+  (click)="resetForm()">
+  reset form
 </button>
