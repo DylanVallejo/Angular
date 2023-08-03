@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 // import { CounterComponent } from './counter/counter.component';
 // import { HeroComponent } from './heroes/components/hero/hero.component';
 // import { ListComponent } from './heroes/components/list/list.component';
-import { CounterModule } from './counter/components/counter.module';
-import { HeroModule } from './heroes/hero.module';
+// import { CounterModule } from './counter/components/counter.module';
+// import { HeroModule } from './heroes/hero.module';
+import { DbzModule } from './dbz/dbz.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,9 @@ import { HeroModule } from './heroes/hero.module';
   // cuando se usa modulos va en imports
   imports: [
     BrowserModule,
-    CounterModule,
-    HeroModule
+    DbzModule
+    // CounterModule,
+    // HeroModule
   ],
   providers: [],
   bootstrap: [AppComponent]
