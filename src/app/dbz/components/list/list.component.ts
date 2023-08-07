@@ -1,12 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
-
+import { DbzService } from '../../services/dbz.service';
+import { v4 as uuid } from 'uuid';
 @Component({
   selector: 'app-dbz-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
+  constructor( public dbzService:DbzService ){
+
+  }
 
   @Input()
   public characterList: Character[] =
@@ -19,12 +23,14 @@ export class ListComponent {
 
 
   @Output()
-  public onDelete:EventEmitter<number> = new EventEmitter();
+  public onDelete:EventEmitter<string> = new EventEmitter();
 
-  onDeleteCharacter(index:number):void{
+  deleteCharacterById(id?:string):void{
     //todo:  Emitro el id del personajes
-    console.log(index)
-    this.onDelete.emit(index)
+
+    if(!id) return
+    console.log(id)
+    this.onDelete.emit(id)
   }
 
 
